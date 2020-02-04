@@ -1,12 +1,11 @@
 var express = require("express"),
-var cors = require('cors')
-  app = express(),
-  app.use(cors())
-  server = require("http")
-    .createServer(app)
-    .listen(4555),
-  io = require("socket.io").listen(server),
-  bodyParser = require("body-parser");
+  cors = require("cors");
+(app = express()), app.use(cors());
+(server = require("http")
+  .createServer(app)
+  .listen(4555)),
+  (io = require("socket.io").listen(server)),
+  (bodyParser = require("body-parser"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var port = 8080;
