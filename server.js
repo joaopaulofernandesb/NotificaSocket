@@ -1,5 +1,7 @@
 var express = require("express"),
+var cors = require('cors')
   app = express(),
+  app.use(cors())
   server = require("http")
     .createServer(app)
     .listen(4555),
@@ -7,7 +9,7 @@ var express = require("express"),
   bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-var port = 3000;
+var port = 8080;
 var router = express.Router();
 /* Socket irá aqui depois */
 var emitir = function(req, res, next) {
