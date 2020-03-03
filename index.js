@@ -1,3 +1,4 @@
+require("dotenv").config();
 var express = require("express"),
   cors = require("cors");
 (app = express()), app.use(cors());
@@ -27,5 +28,5 @@ router.route("/notificar").get(function(req, res) {
   res.json({ message: "Rota Ok" });
 });
 
-app.listen(port);
+app.listen(process.env.PORT || 5000);
 console.log("conectado a porta " + port);
