@@ -24,6 +24,7 @@ var router = express.Router();
 var emitir = function(req, res, next) {
   var notificar = req.query.notificacao || "";
   var teste = req.query.teste || "";
+  var id = req.query.id || "";
 
   if (notificar != "") {
     io.emit("notificacao", notificar);
@@ -34,6 +35,7 @@ var emitir = function(req, res, next) {
 
   if (teste != "") {
     io.emit("teste", teste);
+    io.emit("/id", id);
     next();
   } else {
     next();
