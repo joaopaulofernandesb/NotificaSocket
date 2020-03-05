@@ -5,12 +5,12 @@
     <title>Recebedor de notificações</title>
   </head>
   <body>
-    <script src="http://localhost:3002/socket.io/socket.io.js"></script>
+    <script src="http://localhost:3001/socket.io/socket.io.js"></script>
     <script>
-      var socket = io("http://localhost:3002", {
+      var socket = io("http://localhost:3001", {
         transports: ["websocket", "polling", "flashsocket"]
       });
-      socket.on("notificacao", function(data) {
+      socket.on("teste", function(data) {
         document.getElementById("messagebox").innerHTML = data;
       });
     </script>
