@@ -34,7 +34,7 @@ var emitir = function(req, res, next) {
   }
 
   if (teste != "") {
-    io.emit("teste", teste);
+    io.emit("teste", teste, id);
     next();
   } else {
     next();
